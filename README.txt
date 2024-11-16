@@ -9,7 +9,7 @@ Este proyecto proporciona una solución escalable y segura para la gestión de c
 Nombre: Carlos Andrés Mesa Roldán
 Cédula: 1044508253
 Institución: Universidad de Antioquia
-Contacto: carlos.mesa@example.com
+Contacto: carlos.mesar@udea.edu.co
 🛠️ Tecnologías Utilizadas
 Backend: Node.js, Express.js
 Autenticación: JSON Web Token (JWT)
@@ -33,3 +33,19 @@ Actualiza la información de una cita existente (fecha y hora).
 DELETE /patient/appointment/:appointmentId
 
 Cancela una cita específica de un paciente.
+
+
+
+Eliminar cita
+curl -X DELETE http://localhost:3000/patient/appointment/1 \
+-H "Authorization: Bearer {token}"
+Información de Doctores
+Obtener información de un doctor en especifico segun ID
+curl http://localhost:3000/doctor/1 \
+-H "Authorization: Bearer $TOKEN" | jq
+Obtener citas de un doctor
+curl http://localhost:3000/doctor/1/appointment \
+-H "Authorization: Bearer $TOKEN" | jq
+Ver citas de un doctor por fecha
+curl "http://localhost:3000/doctor/1/appointment?date=20-11-2024" \
+-H "Authorization: Bearer $TOKEN" | jq
