@@ -1,36 +1,35 @@
+🏥 API de Gestión de Citas Médicas
+📚 Proyecto Académico
+Una API REST diseñada para gestionar citas médicas, enfocándose en autenticación de pacientes y administración eficiente de citas. Construida con las mejores prácticas de desarrollo utilizando Node.js, Express, JWT, y PostgreSQL.
 
-# API de Gestión de Citas Médicas
+🚀 Descripción del Proyecto
+Este proyecto proporciona una solución escalable y segura para la gestión de citas médicas. Incluye rutas esenciales para pacientes, como inicio de sesión, asignación, edición y eliminación de citas. El enfoque principal está en implementar las funcionalidades pares asignadas en el enunciado, asegurando un desarrollo limpio y funcional.
 
-## Descripción del Proyecto
+👨‍💻 Autor
+Nombre: Carlos Andrés Mesa Roldán
+Cédula: 1044508253
+Institución: Universidad de Antioquia
+Contacto: carlos.mesa@example.com
+🛠️ Tecnologías Utilizadas
+Backend: Node.js, Express.js
+Autenticación: JSON Web Token (JWT)
+Base de Datos: PostgreSQL
+Lenguaje: JavaScript
+✨ Características Principales
+🌟 Autenticación de Pacientes
+POST /patient/login
+Los pacientes pueden iniciar sesión utilizando su correo y contraseña.
+Genera un token JWT con vigencia de 30 minutos para sesiones seguras.
+📅 Gestión de Citas Médicas
+GET /patient/:id/appointment
 
-Este proyecto consiste en desarrollar una API REST para la gestión de citas médicas, enfocándose únicamente en las funcionalidades relacionadas con las tareas **pares** del enunciado. Esto incluye la autenticación de pacientes, administración de sus citas y las rutas relacionadas. El desarrollo sigue las mejores prácticas de Node.js y Express, utilizando JWT para autenticación y PostgreSQL como base de datos.
+Consulta todas las citas de un paciente por su ID.
+POST /patient/appointment
 
-## Autor
+Permite asignar nuevas citas a pacientes, especificando fecha y hora.
+PUT /patient/appointment/:appointmentId
 
-**Nombre:** Carlos Andrés Mesa Roldán  
-**Cédula:** 1044508253  
-**Institución:** Universidad de Antioquia  
+Actualiza la información de una cita existente (fecha y hora).
+DELETE /patient/appointment/:appointmentId
 
-## Funcionalidades Principales (Asignadas)
-
-### Rutas para Pacientes
-1. **POST** `/patient/login`  
-   - Permite que un paciente inicie sesión proporcionando su correo electrónico y contraseña.  
-   - Genera un JWT con vigencia de 30 minutos.  
-   
-2. **GET** `/patient/:id/appointment`  
-   - Lista todas las citas asignadas al paciente con base en su ID.  
-
-3. **POST** `/patient/appointment`  
-   - Permite asignar una nueva cita a un paciente con la información de fecha y hora.
-
-4. **PUT** `/patient/appointment/:appointmentId`  
-   - Permite editar la información de una cita existente (fecha y hora).
-
-5. **DELETE** `/patient/appointment/:appointmentId`  
-   - Permite eliminar una cita específica del paciente.
-
----
-DME.md
-
-
+Cancela una cita específica de un paciente.
